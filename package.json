@@ -1,0 +1,18 @@
+{
+    "name": "com.feliperes.activityui",
+    "version": "0.1.0",
+    "displayName": "Activity UI",
+    "description": "This package provides assets, animations and components to develop UI like the android system.",
+    "unity": "2019.4",
+   "keywords": [
+      "UI",
+      "Android",
+      "Activity"
+    ],
+    "author": {
+      "name": "Felipe Resende Gomes",
+      "email": "feliperesendehq@outlook.com",
+      "url": "https://github.com/FelipeRes"
+    }
+  }
+  
