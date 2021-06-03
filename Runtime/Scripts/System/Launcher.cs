@@ -28,7 +28,7 @@ namespace ActivityUI{
                 InstantiateActivity(activityName,context,prefab);
             }else if(prefab.GetComponent<Activity>().type == ActivityType.SINGLE_TOP){
                 if(backStack.Count > 0 && activityName == backStack.Peek().name){
-                    backStack.Peek().onRestart(context);
+                    backStack.Peek().onCreate(context);
                 }else{
                     InstantiateActivity(activityName,context,prefab);
                 }
@@ -55,5 +55,16 @@ namespace ActivityUI{
                 backStack.Peek().onResume();
             }
         }
+
+        void OnApplicationFocus (bool paused) { 
+            if(backStack.Count > 0){
+                if(!paused) {
+                    backStack.Peek().onStop();
+                }else{ 
+                    backStack.Peek().onRestart();
+                }
+            }
+        }
+        
     }
 }

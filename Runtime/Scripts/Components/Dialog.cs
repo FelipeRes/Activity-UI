@@ -21,6 +21,7 @@ namespace ActivityUI{
             leftButton.onClick.RemoveAllListeners();
             leftButton.onClick.AddListener(()=>{Hide();});
             rightButton.onClick.RemoveAllListeners();
+            rightButton.onClick.AddListener(()=>{Hide();});
             leftButtonText.text = "OK";
             rightButtonText.text = "Cancel";
             leftButtonText.color = Color.blue;
@@ -62,7 +63,7 @@ namespace ActivityUI{
                 return this;
             }
             public DialogBuilder AddActionToRight(Action action){
-                dialog.rightButton.gameObject.SetActive(false);
+                dialog.rightButton.gameObject.SetActive(true);
                 dialog.rightButton.onClick.RemoveAllListeners();
                 dialog.rightButton.onClick.AddListener(()=>{action();dialog.Hide();});
                 return this;
@@ -72,8 +73,8 @@ namespace ActivityUI{
                 dialog.leftButtonText.text = text;
                 return this;
             }
-            public DialogBuilder AddrightButtonText(string text){
-                dialog.rightButtonText.gameObject.SetActive(true);
+            public DialogBuilder AddRightButtonText(string text){
+                dialog.rightButton.gameObject.SetActive(true);
                 dialog.rightButtonText.text = text;
                 return this;
             }
@@ -82,8 +83,8 @@ namespace ActivityUI{
                 dialog.leftButtonText.color = color;
                 return this;
             }
-            public DialogBuilder AddrightButtonColor(Color color){
-                dialog.rightButtonText.gameObject.SetActive(true);
+            public DialogBuilder AddRightButtonColor(Color color){
+                dialog.rightButton.gameObject.SetActive(true);
                 dialog.rightButtonText.color = color;
                 return this;
             }

@@ -20,14 +20,15 @@ namespace ActivityUI{
             controller?.OnCreate(context);
             onStart();
         }
-        public void onRestart(object context){
+        public void onRestart(){
             Interactable(false);
-            controller?.OnCreate(context);
+            controller?.OnRestart();
             onStart();
         }
         public void onStart(){
             Interactable(true);
             controller?.OnStart();
+            onResume();
         }
         public void onResume(){
             Active();
@@ -37,7 +38,11 @@ namespace ActivityUI{
         public void onPause(){
             Interactable(false);
             Invoke("Disactive",0.5f);
-            controller?.OnActive();
+            controller?.OnPause();
+        }
+        public void onStop(){
+            Interactable(false);
+            controller?.OnStop();
         }
         public void onDestroy(){
             Interactable(false);
