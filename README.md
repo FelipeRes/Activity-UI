@@ -115,7 +115,7 @@ Change the color of the fisrt button text.
 **DialogBuilder AddRightButtonColor(Color color)**
 Change the color of the default button text. This button will appear with the default action to close the dialog.
 
-**void Show()**
+**Show()**
 Show the dialog. Use this method only in the end of builder.
 
 If you don't specify any action to dialog buttons so the default behaviour is close the dialog. If you specify any action to any button, after execute the action, it will close the dialog too. Example:
@@ -136,3 +136,4 @@ public override void OnStart(){
           .Show();
 }
 ```
+![](images/dialog.png)
