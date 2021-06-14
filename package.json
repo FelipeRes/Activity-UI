@@ -1,6 +1,6 @@
 {
     "name": "com.feliperes.activityui",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "displayName": "Activity UI",
     "description": "This package provides assets, animations and components to develop UI like the android system.",
     "unity": "2019.4",
