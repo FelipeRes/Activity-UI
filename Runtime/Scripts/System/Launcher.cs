@@ -20,9 +20,6 @@ namespace ActivityUI{
             NewActivity(activityName,null);
         }
         public static void NewActivity(string activityName, object context){
-            if(backStack.Count > 0){
-                backStack.Peek().onPause();
-            }
             GameObject prefab = Resources.Load($"Activities/{activityName}") as GameObject;
             if(prefab.GetComponent<Activity>().type == ActivityType.STANDARD){
                 InstantiateActivity(activityName,context,prefab);
@@ -30,6 +27,9 @@ namespace ActivityUI{
                 if(backStack.Count > 0 && activityName == backStack.Peek().name){
                     backStack.Peek().onCreate(context);
                 }else{
+                    if(backStack.Count > 0){
+                        backStack.Peek().onPause();
+                    }
                     InstantiateActivity(activityName,context,prefab);
                 }
                 
