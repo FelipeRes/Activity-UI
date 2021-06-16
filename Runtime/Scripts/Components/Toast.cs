@@ -11,7 +11,12 @@ namespace ActivityUI{
         static private Toast instance;
     
         public void Awake(){
-            instance = this;
+            if(instance == null){
+                instance = this;
+                DontDestroyOnLoad(this.gameObject);
+            }else{
+                Destroy(this.gameObject);
+            }
         }
         static public void Show(string message, float time){
             instance.animator.Play("Show",0,0);
