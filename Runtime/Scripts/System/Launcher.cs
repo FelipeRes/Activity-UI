@@ -9,6 +9,7 @@ namespace ActivityUI{
         private static Stack<Activity> backStack = new Stack<Activity>();
         public static Activity currentActivity => backStack.Peek();
         void Start(){
+            backStack.Clear();
             NewActivity("Main");
         }
         void Update(){
