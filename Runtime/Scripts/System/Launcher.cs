@@ -7,6 +7,7 @@ namespace ActivityUI{
     public class Launcher : MonoBehaviour{
 
         private static Stack<Activity> backStack = new Stack<Activity>();
+        public static int stackCount => backStack.Count;
         public static Activity currentActivity => backStack.Peek();
         void Start(){
             backStack.Clear();
