@@ -6,7 +6,7 @@ using UnityEngine;
 namespace ActivityUI{
     public class Launcher : MonoBehaviour{
 
-        private static Stack<Activity> backStack = new Stack<Activity>();
+        protected static Stack<Activity> backStack = new Stack<Activity>();
         public static int stackCount => backStack.Count;
         public static Activity currentActivity => backStack.Peek();
         void Start(){
@@ -69,6 +69,10 @@ namespace ActivityUI{
                     backStack.Peek().onRestart();
                 }
             }
+        }
+        
+        public void ClearBackStack(){
+            backStack.Clear();
         }
         
     }
